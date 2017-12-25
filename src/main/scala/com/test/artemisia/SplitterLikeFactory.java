@@ -16,7 +16,7 @@ public class SplitterLikeFactory extends JTaskLike {
     }
 
     @Override
-    public Task create(String name, Config config) {
+    public Task create(String name, Config config, Config reference) {
         return new SplitterTask(name, config.getString("content"));
     }
 

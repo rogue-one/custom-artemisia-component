@@ -28,7 +28,7 @@ object ReducerTask extends TaskLike {
 
   override val outputConfig: Option[Config] = None
   override def fieldDefinition: Map[String, AnyRef] = Map()
-  override def apply(name: String, config: Config): Task = {
+  override def apply(name: String, config: Config, reference: Config): Task = {
     new ReducerTask(name, config.as[List[String]]("content").toArray)
   }
   override val taskName: String = "ReducerTask"
